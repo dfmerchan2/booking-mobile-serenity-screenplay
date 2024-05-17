@@ -22,7 +22,8 @@ public class HomePage {
           .locatedForIOS(By.id(""));
   public static final Target BTN_WELCOME_MESSAGE =
       Target.the("Label welcome message")
-          .locatedForAndroid(By.id("com.booking:id/genius_onbaording_bottomsheet_title"))
+          .locatedForAndroid(
+              By.id("com.booking:id/bui_title_title"))
           .locatedForIOS(By.id(""));
   public static final Target LBL_NOT_ACCOMMODATION_FOUND =
       Target.the("Label no accommodation found")

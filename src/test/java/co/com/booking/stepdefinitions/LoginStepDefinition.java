@@ -20,13 +20,11 @@ public class LoginStepDefinition {
   @When("that {string} authenticated with user {string} and password {string}")
   public static void theUserHasCredentialsAndDoesTheLogin(String actor, String user, String pass) {
     theActorCalled(actor).attemptsTo(LoginInApplication.ofBooking(user, pass));
-    theActorCalled(actor).remember(USER_NAME.getKey(), user);
   }
 
   @Then("should see the message of welcoming {string}")
   public static void shouldSeeTheMessageOfWelcoming(String message) {
-    String userName = theActorInTheSpotlight().recall(USER_NAME.getKey());
-    theActorInTheSpotlight().should(seeThat(TheMessage.is(BTN_WELCOME_MESSAGE), equalTo(userName)));
+    theActorInTheSpotlight().should(seeThat(TheMessage.is(BTN_WELCOME_MESSAGE), equalTo(message)));
   }
 
   @Then("should see the authentication error message {string}")
